@@ -1,0 +1,337 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-image: url('./assets/bg.jpg');
+}
+
+
+
+/* for current day status */
+.today-background {
+  width: 90%;
+  height: 500px;
+  margin: 0 auto; 
+  position: relative;
+  background-image: url('./assets/current.jpg');
+  border-radius: 20px;
+}
+
+
+/* for change city and controller */
+.controller {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+  
+}
+
+.change-city {
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+  font-size: 18px;
+  background-color: #7668E5;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.temp-unit {
+  border-radius: 50%;
+  padding: 10px;
+  background-color: #7668E5;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.today-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 5%;
+  width: 100%; /* Ensure the content spans the full width of the parent */
+  padding: 30px;
+  margin-top: 30px; 
+}
+
+.content-location h1{
+  font-size: 70px;
+  font-weight: 700;
+  color: #fff;
+}
+.content-location p{
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
+}
+
+
+/* more content-1 */
+.more-content-1 {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+}
+.more-content-1-info {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.more-content-1-info p{
+  font-size: 22px;
+}
+/* today-temprature */
+.today-temp {
+  background-color: #7668E5;
+  padding: 15px;
+  border-radius: 10px;
+  
+}
+.today-temp-image {
+  margin-top: 15px;
+  width: 200px;
+  height: 200px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.today-temp-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.today-temp-image p{
+  color: #fff;
+}
+
+.today-temp h1, h3{
+  text-align: center;
+  color: #fff;
+}
+
+/* next-day card  from nextDay.jsx*/
+.next-day-card {
+  width: 180px;
+  background-color: #7668E5;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all .6s ease;
+}
+.next-day-card:hover{
+  background-color: #ce72ba;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  .next-day-temp {
+    h2{
+      color: rgb(99, 72, 127);
+    }
+  }
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 110px; /* Adjust height as necessary */
+}
+.next-day-card .next-day-temp{
+  display: flex;
+  align-items: center;
+  gap:15px;
+  justify-content: center;
+  h1 {
+    color: #fff;
+    font-size: 35px;
+    
+  }
+  h2 {
+    margin-top: 5px;
+    font-size: 25px;
+    color: #caafaf;
+    transition: all .6s ease;
+    
+  }
+}
+.next-day-extra-info {
+  
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: center;
+
+  p{
+    font-size: 15px;
+  }
+  
+}
+
+.next-day-extra-info .common-class{
+  display: flex;
+  align-items: center;
+  
+}
+
+/* from home.jsx */ 
+.weather-container{
+  
+  h2{
+    text-align: center;
+    font-size: 35px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+}
+
+/* next-5-day-container from home.jsx */
+.next-five-day-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: center;
+  gap: 20px;
+  
+}
+
+
+/* media query */
+@media only screen and (max-width: 968px) {
+  .next-five-day-container {
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .today-background {
+    width: 95%;
+    height: 600px;
+    margin: 0 auto;
+  }
+  .today-content{
+    flex-wrap: nowrap;
+  }
+  
+}
+@media only screen and (max-width: 768px) {
+  .today-background {
+    width: 90%;
+    height: 550px;
+    margin: 0 auto;
+  }
+  .today-content {
+    /* flex-direction: column; */
+    gap:20px;
+    align-items: center;
+    padding: 15px;
+    /* top: 8%; */
+    
+  }
+
+  .content-location h1{
+    font-size: 40px;
+    font-weight: 700;
+  }
+  .content-location p{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .content-1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap:10px;
+  }
+  .more-content-1 {
+  flex:1;
+  }
+  .more-content-1-info p{
+    font-size: 18px;
+  }
+  .today-temp {
+    width: 100%;
+  }
+  
+  .next-five-day-container {
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 660px){
+  .today-background{
+    height: 820px;
+  }
+  .today-content {
+    flex-direction: column-reverse;
+    gap:20px;
+    align-items: center;
+    padding: 15px;
+    /* top: 8%; */
+    
+  }
+  .content-1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 568px) {
+  .today-background {
+    width: 95%;
+    height: 850px;
+    margin: 0 auto;
+  }
+  
+  .today-temp-image {
+    width: 150px;
+    height: 150px;
+  }
+  .next-day-card {
+    width: 150px;
+  }
+  .image-container {
+    width: 90%;
+    height: 110px; /* Adjust height as necessary */
+    display: flex;
+    flex-direction: column;
+  }
+  .next-day-card .next-day-temp{
+    h1 {
+      font-size: 30px;
+      
+    }
+    h2 {
+      font-size: 20px;
+      color: #caafaf;
+      
+    }
+  }
+  .next-five-day-container {
+    grid-template-columns: auto auto;
+    justify-content: center;
+    gap: 10px;
+  }
+
+}
+
+@media only screen and (max-width: 350px) {
+  
+  .more-content-1-info {
+    p {
+        font-size: 16px;
+    }
+  }
+
+}
